@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my bestie ♥︎</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="custom-music-player-container">
+        <div class="player-trigger-box" onclick="togglePlayerWidget()">
+            <img src="music.png" alt="Music" class="trigger-icon">
+            <span class="pulse-ring"></span>
+        </div>
+
+        <div id="player-widget" class="player-widget-card">
+            <div class="widget-header">
+                <span class="widget-title">Music Box 🎵</span>
+                <button class="widget-close" onclick="togglePlayerWidget()">&times;</button>
+            </div>
+            
+            <div class="widget-body">
+                <div class="track-art-container">
+                    <img id="widget-track-art" src="music.png" alt="Track Art">
+                </div>
+                
+                <div class="widget-track-details">
+                    <div id="widget-track-title" class="widget-track-name">اختر أغنية لتبدأ</div>
+                </div>
+
+                <div class="progress-container">
+                    <span id="current-time" class="time-label">00:00</span>
+                    <input type="range" id="track-progress-bar" min="0" max="100" value="0" oninput="seekTrack()">
+                    <span id="total-duration" class="time-label">00:00</span>
+                </div>
+
+                <div class="widget-controls">
+                    <button id="w-loop-btn" class="control-btn loop-mode-all" onclick="toggleGlobalLoop()" title="وضع التكرار"></button>
+                    <button class="control-btn prev-btn" onclick="playPrevTrack()" title="السابق"></button>
+                    <button id="w-play-btn" class="control-btn play-btn-main" onclick="toggleGlobalPlay()" title="تشغيل / إيقاف"></button>
+                    <button class="control-btn next-btn" onclick="playNextTrack()" title="التالي"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="global-audio-player"></audio>
+
+    <button class="top-right-btn" onclick="openModal('other-sites')">🔗</button>
+
+    <div class="floating-stars">
+        <div class="star">✨</div>
+        <div class="star">⭐</div>
+        <div class="star">🌟</div>
+        <div class="star">✨</div>
+        <div class="star">🌟</div>
+    </div>
+
+    <div class="container">
+        <header>
+            <img src="kitty.gif" alt="Hello Kitty" class="kitty-gif">
+            <h1 class="neon-title"><span class="heart-pulse">💖</span> i Adore you</h1>
+            <p>أحلى الأوقات اللي قضيتها معاكي كلها هنا ♡</p>
+        </header>
+
+        <div class="folders-grid">
+            <div class="folder-card" onclick="openModal('my-songs')">
+                <div class="folder-icon">🎵</div>
+                <h3>أغاني بصوتي</h3>
+            </div>
+
+            <div class="folder-card" onclick="openModal('her-photos')">
+                <div class="folder-icon">📸</div>
+                <h3>حياتي</h3>
+            </div>
+
+            <div class="folder-card" onclick="openModal('fav-songs')">
+                <div class="folder-icon">⭐</div>
+                <h3>أغانيكي المفضلة</h3>
+            </div>
+
+            <div class="folder-card" onclick="openModal('story')">
+                <div class="folder-icon">💌</div>
+                <h3>بحبك</h3>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-heart">✨🌸✨</div>
+            <p class="footer-text">أقل حاجة بقدر أعملها لأحلى إنسانة عندي 💖</p>
+            <div class="days-counter" id="counter">جاري حساب أيامنا الجميلة... ✨</div>
+        </footer>
+    </div>
+
+    <div id="folderModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
