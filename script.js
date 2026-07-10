@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // حساب العداد للأيام أسفل الصفحة
     // تم ضبط التاريخ ليكون في الماضي لضمان ظهور العداد بشكل صحيح (مثال: 15 مايو 2024)
-    const firstMeetDate = new Date(2024, 4, 15); 
+    const firstMeetDate = new Date(2025, 4, 15); 
     const today = new Date();
     const differenceInTime = today.getTime() - firstMeetDate.getTime();
     const differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24));
