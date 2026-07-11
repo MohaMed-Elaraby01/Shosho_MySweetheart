@@ -6,7 +6,7 @@ const myCustomPlaylist = [
     { title: "بعشق روحك والكلمات", src: "songs/musicBox/بعشق روحك والكلمات.mp3", cover: "nbdy.png" },
     { title: "حبك بحر ماله حدود", src: "songs/musicBox/حبك بحر ماله حدود.mp3", cover: "hbkbhr.png" },
     { title: "أحلى رسمة", src: "songs/musicBox/أحلى رسمة.mp3", cover: "wana.png" },
-    { title: "نسيني وانا جمبك كل الدنيا", src: "songs/musicBox/نسيني وانا جمبك كل الدنيا.mp3", cover: "nasyny.png" },
+    { title: "نسيني وانا جنبك كل الدنيا", src: "songs/musicBox/نسيني وانا جمبك كل الدنيا.mp3", cover: "nasyny.png" },
     { title: "أغار عليها", src: "songs/musicBox/أغار عليها.mp3", cover: "agar.png" },
     { title: "معقول", src: "songs/musicBox/معقول.mp3", cover: "Maaqul.png" },
     { title: "عيد الحب", src: "songs/musicBox/عيد الحب.mp3", cover: "edhb.png" },
