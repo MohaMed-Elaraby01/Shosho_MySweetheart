@@ -1,5 +1,4 @@
 body {
-    /* تم عكس التدرج ليبدأ خفيفاً من الأعلى ويزداد عمقاً للأسفل */
     background: linear-gradient(180deg, #ffe0e6 0%, #ffc1cd 40%, #ffb3c1 80%, #ffa3b5 100%);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #4f4f4f; 
@@ -14,7 +13,6 @@ body {
     box-sizing: border-box;
 }
 
-
 *, *:before, *:after {
     box-sizing: inherit;
     -webkit-tap-highlight-color: transparent !important; 
@@ -28,7 +26,7 @@ body {
     background: rgba(255, 255, 255, 0.4);
     border: 1px solid rgba(255, 182, 193, 0.5);
     border-radius: 4px; 
-    color: #ff9ebb; /* بينك فاتح للخط */
+    color: #ff9ebb; 
     padding: 8px 14px;
     font-size: 0.85rem;
     font-weight: 600;
@@ -52,13 +50,12 @@ body {
     z-index: 100;
 }
 
-/* 🟥 تعديل صندوق المشغل من الخارج: مربع بحواف دائرية وحجم واضح وثابت */
 .player-trigger-box {
-    width: 72px; /* حجم واضح وكبير */
+    width: 72px; 
     height: 72px; 
     background: rgba(255, 255, 255, 0.6);
     border: 2px solid rgba(255, 182, 193, 0.35); 
-    border-radius: 16px; /* حواف دائرية للمربع وليس دائرياً كاملاً */
+    border-radius: 16px; 
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -78,15 +75,13 @@ body {
     box-shadow: 0 10px 25px rgba(255, 182, 193, 0.3);
 }
 
-/* الأيقونة ثابتة تماماً بدون دوران */
 .trigger-icon {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px; /* حواف متناسقة مع المربع الخارجي */
+    border-radius: 10px; 
 }
 
-/* حلقة النبض متناسقة مع الشكل المربع الجديد */
 .pulse-ring {
     position: absolute;
     width: 100%;
@@ -102,7 +97,6 @@ body {
     100% { transform: scale(1.35); opacity: 0; }
 }
 
-/* 🌈 إطار الـ RGB التفاعلي الهادئ الممتد حول القائمة عند فتحها */
 .player-widget-card {
     position: absolute;
     top: 85px; 
@@ -120,18 +114,13 @@ body {
     transform: translateY(-10px);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
-    
-    /* تجهيز مكان لإضاءة الإطار المتدرج */
     border: 2px solid transparent; 
 }
 
-/* تأثير الـ RGB الناعم عند ظهور القائمة */
 .player-widget-card.active {
     display: flex;
     transform: translateY(0);
     opacity: 1;
-    
-    /* إضافة تدرج الألوان بينك فاتح وتحريكه حول الحدود */
     background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), 
                       linear-gradient(135deg, #fff0f5, #ffb6c1, #fff5f8, #ffe4e1);
     background-origin: border-box;
@@ -141,7 +130,6 @@ body {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 20px rgba(255, 182, 193, 0.2);
 }
 
-/* أنيميشن حركة انتقالات الألوان الهادئة */
 @keyframes calmRGB {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -497,6 +485,7 @@ header p {
     padding: 15px;
 }
 
+/* 📥 تأكيد خاصية الـ Scroll وحساب الحجم ليعمل الـ Overflow بشكل كامل ومثالي */
 .modal-content {
     background: linear-gradient(135deg, #ffffff 0%, #fff0f5 100%);
     padding: 25px;
@@ -504,8 +493,9 @@ header p {
     border: 2px solid #ffb6c1;
     width: 100%;
     max-width: 480px;
-    max-height: 75vh;
-    overflow-y: auto;
+    max-height: 80vh; /* زيادة مساحة العرض قليلاً لتسهيل التمرير */
+    overflow-y: auto; /* يسمح بالسكرول الرأسي */
+    overflow-x: hidden;
     position: relative;
     text-align: right;
     box-shadow: 0 25px 60px rgba(255, 182, 193, 0.3);
@@ -696,7 +686,7 @@ footer {
         padding: 6px 10px; font-size: 0.75rem;
     }
     .custom-music-player-container { top: 10px; left: 10px; }
-    .player-trigger-box { width: 56px; height: 56px; border-radius: 12px; padding: 4px; } /* متجاوب للهواتف */
+    .player-trigger-box { width: 56px; height: 56px; border-radius: 12px; padding: 4px; } 
     .player-widget-card { top: 75px; width: 230px; padding: 12px; }
     .track-art-container { width: 75px; height: 75px; }
     .neon-title { font-size: 2.1rem; margin-top: 65px; }
@@ -712,4 +702,3 @@ footer {
     .audio-info p, .site-link-item span { font-size: 0.85rem; }
     .play-btn { padding: 6px 12px; font-size: 0.75rem; }
 }
-
