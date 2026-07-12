@@ -267,6 +267,8 @@ function openModal(folderType) {
             <div style="line-height: 2; font-size: 1.15rem; color: #4f4f4f; text-align: justify;">
                 <p>🌸 فاكرة لما قلتلك <strong>"باي يحلوة"</strong>؟ الجملة دي كانت بداية إني أعرف أجمل وأرق واحدة شفتها في حياتي كلها.</p>
                 <p>شايفة العداد اللي تحت ده؟ إن شاء الله لو ربنا كاتب لنا نصيب، هاجي يوم <strong>"3285"</strong> وأطلب إيدك رسمي.. ولحد ما يجي الوقت ده، كل يوم هقعد أدعي من كل قلبي إنك تكوني من نصيبي وتفضلي منورة دنيتي دايماً 🌼</p>
+
+                <p>وحشتينيييييييييييي نفسي احضنك اخنقك :)</p>
                 <div class="gallery" style="margin-top: 20px;">
                     <img src="images/moh.png" alt="صورة خاصة">
                 </div>
