@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>my bestie ♥︎</title>
+    <title>♥︎ Shadoshty ♥︎</title>
     <link rel="icon" type="image/png" href="icon.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- صندوق الموسيقى العائم (الميوزك بوكس) -->
     <div class="custom-music-player-container">
         <div class="player-trigger-box" onclick="togglePlayerWidget()">
             <img src="music.png" alt="Music" class="trigger-icon">
@@ -37,7 +38,12 @@
                 </div>
 
                 <div class="widget-controls">
+                    <!-- زرار اللوب -->
                     <button id="w-loop-btn" class="control-btn loop-mode-all" onclick="toggleGlobalLoop()" title="وضع التكرار"></button>
+                    
+                    <!-- زرار القلب مع التنسيق المضمون لمكان الفقاعة -->
+                    <button id="widget-heart-btn" class="control-btn-heart" onclick="toggleMusicBoxLike(event)" title="إضافة للمفضلة" style="background:none; border:none; font-size:1.4rem; cursor:pointer; color:#aeaeae; outline:none; padding:0 5px; vertical-align:middle; position:relative; display:inline-block;">♡</button>
+                    
                     <button class="control-btn prev-btn" onclick="playPrevTrack()" title="السابق"></button>
                     <button id="w-play-btn" class="control-btn play-btn-main" onclick="toggleGlobalPlay()" title="تشغيل / إيقاف"></button>
                     <button class="control-btn next-btn" onclick="playNextTrack()" title="التالي"></button>
@@ -46,6 +52,7 @@
         </div>
     </div>
 
+    <!-- عنصر الصوت الموحد للميوزك بوكس -->
     <audio id="global-audio-player"></audio>
 
     <button class="top-right-btn" onclick="openModal('other-sites')">🔗</button>
