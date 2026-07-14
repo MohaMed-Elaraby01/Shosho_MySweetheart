@@ -933,3 +933,58 @@ footer {
     .left-profile { left: 15px; }
     .right-profile { right: 15px; }
 }
+
+
+/* حاوية القلوب - تم ضبطها لتكون فوق الحافة العلوية للصورة تماماً */
+.hearts-container {
+    position: absolute;
+    top: -40px; /* تضمن أن نقطة الانطلاق تبدأ من الحافة العلوية تماماً */
+    left: 0;
+    width: 100%; /* تغطي عرض الصورة بالكامل لتوزيع عشوائي سليم */
+    height: 40px;
+    pointer-events: none; /* لمنع تداخل النقر مع الصورة */
+    z-index: 10;
+    overflow: visible; /* للسماح للقلوب بالصعود بحرية خارج الحاوية */
+}
+
+/* القلوب الافتراضية للبروفايل الثاني (شبه شفافة في البداية) */
+#right-profile-container .heart-particle {
+    opacity: 0.25; /* شفافة بنسبة 75% */
+    filter: grayscale(50%); /* تأثير بهتان بسيط للواقعية */
+    transition: opacity 0.5s ease, filter 0.5s ease;
+}
+
+/* عندما يصبح البروفايل الثاني نشطاً (تتحول لحمراء واقعية تماماً) */
+#right-profile-container.hearts-active .heart-particle {
+    opacity: 1 !important;
+    filter: grayscale(0%) !important;
+}
+
+/* عنصر القلب نفسه وضبط نقطة انطلاقه العلوية */
+.heart-particle {
+    position: absolute;
+    bottom: 0; /* تبدأ من أسفل الحاوية (التي هي الحافة العلوية للصورة عدل) */
+    color: #ff2a54; /* لون أحمر واقعي دافئ */
+    font-size: 1.4rem;
+    font-family: sans-serif;
+    animation: floatUpStraight 2.2s ease-out forwards;
+}
+
+/* أنيميشن الصعود العمودي من فوق الصورة واختفائه بعد مسافة قصيرة */
+@keyframes floatUpStraight {
+    0% {
+        transform: translateY(0) scale(0.6);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1; /* تظهر فوراً بمجرد خروجها من حافة الصورة */
+    }
+    80% {
+        opacity: 0.8;
+    }
+    100% {
+        /* تصعد مسافة قصيرة عمودياً (حوالي 50 بكسل) مع انحراف عشوائي بسيط جداً لتظل فوق الصورة */
+        transform: translate(var(--random-x), -50px) scale(1.1);
+        opacity: 0; /* تختفي تماماً بعد الارتفاع المطلوب */
+    }
+}
