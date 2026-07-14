@@ -13,7 +13,7 @@ let myCustomPlaylist = [
     { id: "box-11", title: "ماريدك(امزح🙂)", src: "songs/musicBox/ماريدك.mp3", cover: "maridk.png" },
     { id: "box-12", title: "كل القصايد", src: "songs/musicBox/كل القصايد.mp3", cover: "kl.png" },
     { id: "box-13", title: "لو على قلبي", src: "songs/musicBox/لو على قلبي.mp3", cover: "lwa3.gif" },
-    { id: "box-14", title: "gsnrman", src: "songs/musicBox/gsnrman.mp3", cover: "gsn.png" },
+    { id: "box-14", title: "غصن رمان", src: "songs/musicBox/gsnrman.mp3", cover: "gsn.png" },
     { id: "box-15", title: "أنا العاشق لعينيك", src: "songs/musicBox/أنا العاشقك لعينيك.mp3", cover: "ana.png" }
 ];
 
