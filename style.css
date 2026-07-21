@@ -713,6 +713,7 @@ footer {
     to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
+/* --- تعديلات التجاوب للموبايل للتأكد من المحاذاة التامة بداخل التحديد الأزرق --- */
 @media (max-width: 600px) {
     body { padding: 15px; }
     .top-right-btn {
@@ -735,6 +736,27 @@ footer {
     .audio-item, .site-link-item { padding: 12px 10px; }
     .audio-info p, .site-link-item span { font-size: 0.85rem; }
     .play-btn { padding: 6px 12px; font-size: 0.75rem; }
+
+    /* ضبط الفوتر والنص والعداد داخل التحديد الأزرق للموبايل */
+    footer {
+        margin-top: 20px;
+        margin-bottom: 50px;
+        padding: 10px 0;
+    }
+
+    .footer-text {
+        font-size: 0.75rem;
+        margin: 6px 0;
+    }
+
+    .days-counter {
+        font-size: 0.72rem;
+        padding: 6px 12px;
+        max-width: 70%;
+        margin: 0 auto;
+        line-height: 1.4;
+        display: inline-block;
+    }
 }
 
 .modal-content {
@@ -858,7 +880,6 @@ footer {
     100% { opacity: 0; transform: translateX(-50%) translateY(-35px) scale(0); }
 }
 
-/* --- تصميم وتنسيقات صور البروفايل المعزولة والآمنة --- */
 .corner-profile-container {
     position: fixed;
     bottom: 20px;
@@ -886,17 +907,14 @@ footer {
     display: block;
 }
 
-/* صورة البروفايل 1 على اليسار */
 .left-profile {
     left: 20px;
 }
 
-/* صورة البروفايل 2 على اليمين */
 .right-profile {
     right: 20px;
 }
 
-/* --- البوردر الأبيض المضيء التفاعلي والنابض بمؤثرات RGB (بنفس هوية مشغل الموسيقى) --- */
 .corner-profile-container.active-glow {
     border-color: #ffffff !important;
     animation: profileBorderGlow 3s ease infinite, profilePulse 2s infinite ease-in-out;
@@ -913,17 +931,15 @@ footer {
     50% { transform: scale(1.08); }
 }
 
-/* حظر صورة اليمين قبل تشغيل اليسار */
 .corner-profile-container.disabled-profile {
     opacity: 0.5;
     cursor: not-allowed;
-    pointer-events: none; /* لمنع أحداث الضغط كلياً بالـ CSS كحماية إضافية */
+    pointer-events: none;
     filter: grayscale(40%);
     box-shadow: none !important;
     transform: none !important;
 }
 
-/* توافق الصور مع الشاشات الصغيرة لتصغير الحجم قليلًا */
 @media (max-width: 600px) {
     .corner-profile-container {
         width: 50px;
@@ -934,57 +950,81 @@ footer {
     .right-profile { right: 15px; }
 }
 
-
-/* حاوية القلوب - تم ضبطها لتكون فوق الحافة العلوية للصورة تماماً */
 .hearts-container {
     position: absolute;
-    top: -40px; /* تضمن أن نقطة الانطلاق تبدأ من الحافة العلوية تماماً */
+    top: -40px; 
     left: 0;
-    width: 100%; /* تغطي عرض الصورة بالكامل لتوزيع عشوائي سليم */
+    width: 100%; 
     height: 40px;
-    pointer-events: none; /* لمنع تداخل النقر مع الصورة */
+    pointer-events: none; 
     z-index: 10;
-    overflow: visible; /* للسماح للقلوب بالصعود بحرية خارج الحاوية */
+    overflow: visible; 
 }
 
-/* القلوب الافتراضية للبروفايل الثاني (شبه شفافة في البداية) */
 #right-profile-container .heart-particle {
-    opacity: 0.25; /* شفافة بنسبة 75% */
-    filter: grayscale(50%); /* تأثير بهتان بسيط للواقعية */
+    opacity: 0.25; 
+    filter: grayscale(50%); 
     transition: opacity 0.5s ease, filter 0.5s ease;
 }
 
-/* عندما يصبح البروفايل الثاني نشطاً (تتحول لحمراء واقعية تماماً) */
 #right-profile-container.hearts-active .heart-particle {
     opacity: 1 !important;
     filter: grayscale(0%) !important;
 }
 
-/* عنصر القلب نفسه وضبط نقطة انطلاقه العلوية */
 .heart-particle {
     position: absolute;
-    bottom: 0; /* تبدأ من أسفل الحاوية (التي هي الحافة العلوية للصورة عدل) */
-    color: #ff2a54; /* لون أحمر واقعي دافئ */
+    bottom: 0; 
+    color: #ff2a54; 
     font-size: 1.4rem;
     font-family: sans-serif;
     animation: floatUpStraight 2.2s ease-out forwards;
 }
 
-/* أنيميشن الصعود العمودي من فوق الصورة واختفائه بعد مسافة قصيرة */
 @keyframes floatUpStraight {
     0% {
         transform: translateY(0) scale(0.6);
         opacity: 0;
     }
     20% {
-        opacity: 1; /* تظهر فوراً بمجرد خروجها من حافة الصورة */
+        opacity: 1; 
     }
     80% {
         opacity: 0.8;
     }
     100% {
-        /* تصعد مسافة قصيرة عمودياً (حوالي 50 بكسل) مع انحراف عشوائي بسيط جداً لتظل فوق الصورة */
         transform: translate(var(--random-x), -50px) scale(1.1);
-        opacity: 0; /* تختفي تماماً بعد الارتفاع المطلوب */
+        opacity: 0; 
+    }
+}
+
+/* --- إصلاح الرعشة والتهنيج على الهواتف --- */
+@media (max-width: 600px) {
+    /* 1. تفعيل التسريع العتادي للعناصر المتتحركة والمودال */
+    .modal, 
+    .modal-content, 
+    .star, 
+    .player-widget-card, 
+    .corner-profile-container {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+        will-change: transform, opacity;
+    }
+
+    /* 2. تقليل حدة الـ blur الثقيل على الموبايل لتحسين الأداء */
+    .modal,
+    .modal-content,
+    .player-widget-card,
+    .player-trigger-box,
+    .folder-card,
+    .days-counter {
+        backdrop-filter: blur(5px) !important;
+        -webkit-backdrop-filter: blur(5px) !important;
+    }
+
+    /* 3. منع التمرير الخلفي للجسم أثناء فتح المودال عشان الشاشة متتهزش */
+    body.modal-open {
+        overflow: hidden;
     }
 }
